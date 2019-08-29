@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  {{ItemsRecieved}}
+  
+  {{ errorMsg }}
+  <button type="button" name="users" class="btn btn-success mce-btn-large uk-navbar-nav" (click)="getUsersFromService()">Show List</button>
+<div class="container" >
+  <p>Click on the images to enlarge them.</p>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let user of users" class="list-group-item" >
+      <div class="thumbnail" >
+        <a href="../../assets/Apple.jpg" target="_blank">
+          <img  src="../../assets/Apple.jpg" alt="mobile" width="10%">
+          <div class="caption">
+            <p>{{ user.name }}</p>
+          </div>
+        </a>
+        <button type="button" name="removeFromCart" class="btn btn-primary"
+        (click)="removeFromCart(user.name)">Remove</button>
+      </div>
+    </div>
+    
+    
+  </div>
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container" >
+  <p>Click on the images to enlarge them.</p>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let item of List; let i=index" class="list-group-item" >
+      {{i.item}}
+      <div class="thumbnail" >
+        <a href="../../assets/Apple.jpg" target="_blank">
+          <img  src="../../assets/Apple.jpg" alt="mobile" width="10%">
+          <div class="caption">
+            <p>{{ item }}</p>
+          </div>
+        </a>
+        <button type="button" name="addtoCart" class="btn btn-primary" (click)="addItemToCart(item)">Add to Cart</button>
+        <button type="button" name="removeFromCart" class="btn btn-primary" (click)="removeFromCart(item)">Remove from Cart</button>
+      </div>
+      
+    </div>
+    <div>
+    </div>
+    
+  </div>
+</div>
+
+</body>
+</html>
+
+
